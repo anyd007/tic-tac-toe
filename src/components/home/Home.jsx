@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useNames } from "../context/NamesContext";
 import "./home.css"
 
@@ -6,6 +7,7 @@ const Home = () =>{
 
     const [showButton, setShowButton] = useState(false)
     const {player1, setPlayer1, player2, setPlayer2} = useNames()
+    const history = useNavigate()
 
     const checkPlayer1 = (val) =>{
         setPlayer1(val)
@@ -17,10 +19,20 @@ const Home = () =>{
         if(player1.length > 1 && player2.length > 1){
             setShowButton(true)
         }
+        else{
+            setShowButton(false)
+        }
+    }
+
+    const handleOpenGame = () =>{
+        history("/game")
+        localStorage.setItem("player1",player1)
+        localStorage.setItem("player2", player2)
     }
     useEffect(()=>{
         showBtn()
     },[player1, player2])
+    
     return(
         <div className="home">
             <h1 className="home__title">KÓŁKO I KRZYŻYK</h1>
@@ -46,7 +58,7 @@ const Home = () =>{
                     value={player2}
                     onChange={e=>checkPlayer2(e.target.value)}/>
                 </div>
-               {showButton && <button className="home__mainView--button">ZACZYNAMY</button>}
+               {showButton && <button onClick={handleOpenGame} className="home__mainView--button">ZACZYNAMY</button>}
             </div>
         </div>
     )

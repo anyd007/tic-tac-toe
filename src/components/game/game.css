@@ -1,0 +1,33 @@
+.game__player2, .game__player1 {
+  font-size: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: space-evenly;
+  height: 80%;
+  color: gold;
+  text-shadow: 4px 4px 18px rgb(251, 251, 255);
+}
+
+.hero {
+  height: 100vh;
+  text-align: center;
+  background: rgb(2, 27, 7);
+  background: linear-gradient(90deg, rgb(2, 27, 7) 0%, rgb(77, 26, 78) 46%, rgb(35, 7, 48) 100%);
+}
+
+.gameTitle {
+  font-size: 3.5rem;
+  color: gold;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 20vw 1fr 20vw;
+  align-items: center;
+}
+.game__player1--score {
+  font-size: 2rem;
+}
+.game__player2--score {
+  font-size: 2rem;
+}/*# sourceMappingURL=game.css.map */
