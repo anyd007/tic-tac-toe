@@ -9,7 +9,7 @@ export const useNames = () => {
 export const NameContextProvider = ({ children }) => {
     const [player1, setPlayer1] = useState([])
     const [player2, setPlayer2] = useState([])
-  
+    
     return(
         <NameContext.Provider value={{player1, setPlayer1, player2, setPlayer2}}>
             {children}

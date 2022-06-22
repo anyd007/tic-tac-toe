@@ -39,7 +39,7 @@ const Home = () =>{
             <div className="home__mainView">
                 <h2 className="home__mainView--description">GRACZE, PODAJCIE SWOJE IMIONA</h2>
                 <div className="home__mainView--player1">
-                    <label htmlFor="player1">IMIĘ GRACZA NR.1</label><br />
+                    <label htmlFor="player1">IMIĘ GRACZA "X"</label><br />
                     <input 
                     className="inputs" 
                     type="text" 
@@ -49,7 +49,7 @@ const Home = () =>{
                     onChange={e =>checkPlayer1(e.target.value)}/>
                 </div>
                 <div className="home__mainView--player2">
-                    <label htmlFor="player2">IMIĘ GRACZA NR.2</label><br />
+                    <label htmlFor="player2">IMIĘ GRACZA "O"</label><br />
                     <input 
                     className="inputs" 
                     type="text" 

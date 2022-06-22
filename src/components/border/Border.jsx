@@ -1,10 +1,113 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { usePoints } from "../context/pointsContext";
+import Square from "../square/Square";
 import "./boder.css"
 
 const Border = () =>{
+    const {points1, setPoints1} = usePoints()
+    const player1 = localStorage.getItem("player1", "player1")
+    const player2 = localStorage.getItem("player2", "player2")
+    const [board, setBoard] = useState(["","","","","","","","",""])
+    const [player, setPlayer] = useState("X")
+    const [result, setResult] = useState({winner:"none", stale:"null"})
+    const pattern = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+    ]
 
+    useEffect(()=>{
+        checkWinner()
+        tieGame()
+        if(player === "X"){
+            setPlayer("0")
+        }
+        else{
+            setPlayer("X")
+        }
+    },[board])
+
+    useEffect(()=>{
+        if(result.stale !=="null"){
+        alert(`wyniki: ${result.winner}`)
+        }
+    },[result])
+
+    const chooseSquare = (square) =>{
+       setBoard(board.map((val, index)=>{
+            if(index === square && val === ''){
+            return player;
+            }
+           return val;
+        }))
+    }
+    const checkWinner = ()=>{
+        pattern.forEach(el=>{
+        let firstPlayer = board[el[0]]
+        if(firstPlayer==='') return;
+        let foundWinningPattern = true
+        el.forEach(index =>{
+            if(board[index] !== firstPlayer){
+                foundWinningPattern = false
+            }
+        })
+        if(foundWinningPattern){
+            let data1 =JSON.parse(localStorage.getItem("data1","data1"))
+        if(player === "0"){
+                setResult({winner: player1, stale:"wygrana"})
+                data1++
+                }
+            else{
+                setResult({winner: player2, stale:"wygrana"})
+            }
+          restart()
+          localStorage.setItem("data1", JSON.stringify(data1)) 
+          setPoints1(data1)
+        }
+        })
+        
+    }
+    
+    const tieGame =  () =>{
+        let tie = true;
+        board.forEach(square=>{
+            if(square ===""){
+                tie=false
+            }
+        })
+        if(tie){
+            setResult({winner:"remis", stale:"non"})
+            restart()
+        }
+       }
+    const restart = () =>{
+        setBoard(["","","","","","","","",""])
+    }
+
+    
     return(
-        <div className="board"></div>
+        <div className="board">
+            <div className="board__row">
+                <Square val={board[0]} chooseSquare={()=>chooseSquare(0)} className="board__row--square" />
+                <Square val={board[1]} chooseSquare={()=>chooseSquare(1)} className="board__row--square" />
+                <Square val={board[2]} chooseSquare={()=>chooseSquare(2)} className="board__row--square" />
+            </div>
+            <div className="board__row">
+                <Square val={board[3]} chooseSquare={()=>chooseSquare(3)}className="board__row--square" />
+                <Square val={board[4]} chooseSquare={()=>chooseSquare(4)}className="board__row--square" />
+                <Square val={board[5]} chooseSquare={()=>chooseSquare(5)} className="board__row--square" />
+            </div>
+            <div className="board__row">
+                <Square val={board[6]} chooseSquare={()=>chooseSquare(6)} className="board__row--square" />
+                <Square val={board[7]} chooseSquare={()=>chooseSquare(7)} className="board__row--square" />
+                <Square val={board[8]} chooseSquare={()=>chooseSquare(8)} className="board__row--square" />
+            </div>
+        </div>
     )
 
 }
