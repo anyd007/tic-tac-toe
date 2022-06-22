@@ -5,6 +5,7 @@ import "./boder.css"
 
 const Border = () =>{
     const {points1, setPoints1} = usePoints()
+    const {points2, setPoints2} = usePoints()
     const player1 = localStorage.getItem("player1", "player1")
     const player2 = localStorage.getItem("player2", "player2")
     const [board, setBoard] = useState(["","","","","","","","",""])
@@ -25,7 +26,7 @@ const Border = () =>{
         checkWinner()
         tieGame()
         if(player === "X"){
-            setPlayer("0")
+            setPlayer("O")
         }
         else{
             setPlayer("X")
@@ -46,6 +47,7 @@ const Border = () =>{
            return val;
         }))
     }
+    
     const checkWinner = ()=>{
         pattern.forEach(el=>{
         let firstPlayer = board[el[0]]
@@ -57,21 +59,24 @@ const Border = () =>{
             }
         })
         if(foundWinningPattern){
-            let data1 =JSON.parse(localStorage.getItem("data1","data1"))
-        if(player === "0"){
+            let data1 =JSON.parse(localStorage.getItem("data1","data1")) || 0
+            let data2 =JSON.parse(localStorage.getItem("data2","data2")) || 0
+        if(player === "O"){
                 setResult({winner: player1, stale:"wygrana"})
                 data1++
                 }
             else{
                 setResult({winner: player2, stale:"wygrana"})
+                data2++
             }
-          restart()
-          localStorage.setItem("data1", JSON.stringify(data1)) 
-          setPoints1(data1)
+            localStorage.setItem("data1", JSON.stringify(data1)) 
+            setPoints1(data1)
+            localStorage.setItem("data2", JSON.stringify(data2))
+            setPoints2(data2)
+            restart()
         }
         })
-        
-    }
+     }
     
     const tieGame =  () =>{
         let tie = true;
