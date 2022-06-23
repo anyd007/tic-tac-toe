@@ -31,7 +31,7 @@ label, .home__mainView--description, .home__title {
 }
 .home__mainView--button {
   grid-column: 1/3;
-  width: 20%;
+  width: 30%;
   font-size: 1.5rem;
   cursor: pointer;
   border-radius: 10px;

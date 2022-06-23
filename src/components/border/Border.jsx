@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNames } from "../context/NamesContext";
 import { usePoints } from "../context/pointsContext";
 import Square from "../square/Square";
 import "./boder.css"
@@ -11,7 +12,9 @@ const Border = () =>{
     const player1 = localStorage.getItem("player1", "player1")
     const player2 = localStorage.getItem("player2", "player2")
     const {board, setBoard} = usePoints()
-    const [player, setPlayer] = useState("O")
+    const {player, setPlayer} = useNames()
+    const {selectPlayer, setSelectPlayer} = useNames()
+    const {showName, setShowName} = useNames()
     const [result, setResult] = useState({winner:"none", stale:"null"})
     const pattern = [
     [0,1,2],
@@ -24,6 +27,7 @@ const Border = () =>{
     [2,4,6]
     ]
 
+  
     useEffect(()=>{
         tieGame()
         checkWinner()
