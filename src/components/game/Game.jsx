@@ -22,6 +22,7 @@ const Game = () =>{
 
     const handleExit = () =>{
         localStorage.clear();
+        setBoard(["","","","","","","","",""])
         setPoints1(0)
         setPoints2(0)
         history("/")

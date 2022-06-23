@@ -40,7 +40,7 @@ const Home = () =>{
             <h1 className="home__title">KÓŁKO I KRZYŻYK</h1>
             <div className="home__mainView">
                 <h2 className="home__mainView--description">GRACZE, PODAJCIE SWOJE IMIONA<br />
-                <span className="home__mainView--info">minimum dwa znaki</span></h2>
+                <span className="home__mainView--info">minimum trzy znaki</span></h2>
                 <div className="home__mainView--player1">
                     <label htmlFor="player1">IMIĘ GRACZA "O"</label><br />
                     <input 
