@@ -42,27 +42,25 @@
     grid-template-columns: 20vw 1fr 20vw;
     align-items: center;
 
-    &__player1{
+    &__player1, &__player2{
         @extend %playersStyle;
 
         &--score{
             font-size: 2rem
         }
-    }
 
-    &__player2{
-       @extend %playersStyle;
-
-       &--score{
-        font-size: 2rem;
-       }
+        &--points{
+            font-family: 'Rubik Moonrocks', cursive;
+            color: red;
+            font-size: 6rem;
+        }
     }
 
     &__restatGame{
         @extend %buttonStyle
     }
 
-    &__restatGame2{
+    &__exitGame{
         grid-column: 3 / 4;
         @extend %buttonStyle
     }

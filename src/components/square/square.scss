@@ -10,8 +10,26 @@
     0 0 0.8rem #bc13fe,
     0 0 2.8rem #bc13fe,
     inset 0 0 1.3rem #bc13fe;
-    font-size: 30px;
-    color: white;
+    font-size: 7rem;
     place-items: center;
     justify-content: center;
+    
+
+    &__val{
+        font-family: 'Rubik Moonrocks', cursive;
+        color: gold;
+        text-shadow:
+        0 0 10px #fff,
+        0 0 22px #bc13fe,
+        0 0 34px #bc13fe,
+        0 0 44px #bc13fe,;
+        opacity: 1;
+    }
+
+    &__val:hover{
+       
+        transition: all 2s ease;
+    }
+
+  
 }

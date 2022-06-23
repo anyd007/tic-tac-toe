@@ -8,8 +8,8 @@ const Border = () =>{
     const {points2, setPoints2} = usePoints()
     const player1 = localStorage.getItem("player1", "player1")
     const player2 = localStorage.getItem("player2", "player2")
-    const [board, setBoard] = useState(["","","","","","","","",""])
-    const [player, setPlayer] = useState("X")
+    const {board, setBoard} = usePoints()
+    const [player, setPlayer] = useState("O")
     const [result, setResult] = useState({winner:"none", stale:"null"})
     const pattern = [
     [0,1,2],

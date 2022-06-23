@@ -8,18 +8,16 @@ label, .home__mainView--description, .home__title {
   text-align: center;
   height: 100vh;
   width: 100vw;
-  background-image: url("../../../photos/business,-entrepreneurship-and-growth.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: rgb(2, 27, 7);
+  background: linear-gradient(90deg, rgb(2, 27, 7) 0%, rgb(77, 26, 78) 46%, rgb(35, 7, 48) 100%);
 }
 .home__title {
   font-size: 7rem;
+  padding: 3%;
 }
 .home__mainView {
   display: grid;
   height: 60%;
-  align-content: space-evenly;
   justify-items: center;
   grid-template-columns: 1fr 1fr;
 }
@@ -27,10 +25,13 @@ label, .home__mainView--description, .home__title {
   font-size: 4rem;
   grid-column: 1/3;
 }
+.home__mainView--info {
+  font-size: 2rem;
+  color: tomato;
+}
 .home__mainView--button {
   grid-column: 1/3;
   width: 20%;
-  padding: 5px;
   font-size: 1.5rem;
   cursor: pointer;
   border-radius: 10px;
@@ -41,7 +42,7 @@ label, .home__mainView--description, .home__title {
   transition: 0.5s ease;
 }
 .home__mainView--button:hover {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: 0 0 10px #fff, 0 0 22px #bc13fe, 0 0 34px #bc13fe, 0 0 44px #bc13fe;
 }
 
 label {

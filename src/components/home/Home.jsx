@@ -16,7 +16,7 @@ const Home = () =>{
         setPlayer2(val)
     }
     const showBtn = () =>{
-        if(player1.length > 1 && player2.length > 1){
+        if(player1.length > 2 && player2.length > 2){
             setShowButton(true)
         }
         else{
@@ -28,6 +28,8 @@ const Home = () =>{
         history("/game")
         localStorage.setItem("player1",player1)
         localStorage.setItem("player2", player2)
+        setPlayer1([])
+        setPlayer2([])
     }
     useEffect(()=>{
         showBtn()
@@ -37,9 +39,10 @@ const Home = () =>{
         <div className="home">
             <h1 className="home__title">KÓŁKO I KRZYŻYK</h1>
             <div className="home__mainView">
-                <h2 className="home__mainView--description">GRACZE, PODAJCIE SWOJE IMIONA</h2>
+                <h2 className="home__mainView--description">GRACZE, PODAJCIE SWOJE IMIONA<br />
+                <span className="home__mainView--info">minimum dwa znaki</span></h2>
                 <div className="home__mainView--player1">
-                    <label htmlFor="player1">IMIĘ GRACZA "X"</label><br />
+                    <label htmlFor="player1">IMIĘ GRACZA "O"</label><br />
                     <input 
                     className="inputs" 
                     type="text" 
@@ -49,7 +52,7 @@ const Home = () =>{
                     onChange={e =>checkPlayer1(e.target.value)}/>
                 </div>
                 <div className="home__mainView--player2">
-                    <label htmlFor="player2">IMIĘ GRACZA "O"</label><br />
+                    <label htmlFor="player2">IMIĘ GRACZA "X"</label><br />
                     <input 
                     className="inputs" 
                     type="text" 
