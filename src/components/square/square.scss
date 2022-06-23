@@ -13,7 +13,6 @@
     font-size: 7rem;
     place-items: center;
     justify-content: center;
-    
 
     &__val{
         font-family: 'Rubik Moonrocks', cursive;
@@ -23,13 +22,5 @@
         0 0 22px #bc13fe,
         0 0 34px #bc13fe,
         0 0 44px #bc13fe,;
-        opacity: 1;
-    }
-
-    &__val:hover{
-       
-        transition: all 2s ease;
-    }
-
-  
+    }  
 }

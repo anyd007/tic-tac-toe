@@ -1,1 +1,1 @@
-{"version":3,"sources":["square.scss","square.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,YAAA;EACA,eAAA;EACA,SAAA;EACA,gIACA;EAMA,eAAA;EACA,mBAAA;EACA,uBAAA;ACLJ;ADQI;EACI,uCAAA;EACA,WAAA;EACA,gFACA;EAIA,UAAA;ACVR;ADaI;EAEI,uBAAA;ACZR","file":"square.css"}
+{"version":3,"sources":["square.scss","square.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,YAAA;EACA,eAAA;EACA,SAAA;EACA,gIACA;EAMA,eAAA;EACA,mBAAA;EACA,uBAAA;ACLJ;ADOI;EACI,uCAAA;EACA,WAAA;EACA,gFACA;ACNR","file":"square.css"}

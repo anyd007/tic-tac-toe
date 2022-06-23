@@ -1,0 +1,53 @@
+.popup {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  height: 100vh;
+  width: 100vw;
+}
+.popup__bg {
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  height: 100vh;
+  width: 100vw;
+}
+.popup__window {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 40vh;
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 3;
+  transition: 0.5 ease-in;
+}
+.popup__window--title {
+  margin: 25px;
+  color: gold;
+  font-size: 4rem;
+}
+.popup__window--info {
+  color: gold;
+  font-size: 3rem;
+}
+.popup__window--icon {
+  font-size: 2rem;
+  color: red;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.popup__window--icon:hover {
+  transform: rotate(360deg) scale(1.5);
+}/*# sourceMappingURL=popup.css.map */
