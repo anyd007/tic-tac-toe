@@ -41,7 +41,7 @@ return(
     <div className="popup__window">
         <CgCloseR onClick={handleCloseNames} className="popup__window--icon"/>
         <h2 className="popup__window--title">LOSOWANIE ZAWODNIKA</h2>
-        <h3 className="popup__window--info">ZACZYNA ZAWODNIK: {selectPlayer}</h3>
+        <h3 className="popup__window--info">ZACZYNA ZAWODNIK: <br />{selectPlayer}</h3>
     </div>
 </div>
 )

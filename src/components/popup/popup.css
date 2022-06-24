@@ -4,6 +4,10 @@
   top: 0%;
   height: 100vh;
   width: 100vw;
+  -webkit-animation-name: show;
+          animation-name: show;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 .popup__bg {
   -webkit-backdrop-filter: blur(3px);
@@ -50,4 +54,26 @@
 }
 .popup__window--icon:hover {
   transform: rotate(360deg) scale(1.5);
+}
+
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=popup.css.map */

@@ -72,19 +72,21 @@ const Border = () =>{
             let data2 =JSON.parse(localStorage.getItem("data2","data2")) || 0
         if(player === "O"){
                 setShowPopup(true)
-                setWinnerName(player1)
-                data1++
-                }
-            else{
-                setShowPopup(true)
                 setWinnerName(player2)
                 data2++
+                }
+            else if(player==="X"){
+                setShowPopup(true)
+                setWinnerName(player1)
+                data1++
             }
             localStorage.setItem("data1", JSON.stringify(data1)) 
             setPoints1(data1)
             localStorage.setItem("data2", JSON.stringify(data2))
             setPoints2(data2)
-            restart()
+            setTimeout(() => {
+                restart()
+            }, 500);
         }
         })
      }

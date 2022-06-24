@@ -4,6 +4,8 @@
     top: 0%;
     height: 100vh;
     width: 100vw;
+    animation-name: show;
+    animation-duration: 1s;
     
 
     &__bg{
@@ -53,5 +55,15 @@
         &--icon:hover{
             transform: rotate(360deg) scale(1.5);
         }
+    }
+}
+@keyframes show {
+    from{
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotate(360deg);
     }
 }
