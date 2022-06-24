@@ -12,12 +12,13 @@ export const PointsContextProvider = ({ children }) => {
     const [points1, setPoints1] = useState(data1)
     const [points2, setPoints2] = useState(data2)
     const [showPopup, setShowPopup] = useState(false)
+    const [showTie, setShowTie] = useState(false)
     const [winnerName, setWinnerName] = useState([])
     const [board, setBoard] = useState(["","","","","","","","",""])
     
     return(
         <PointsContext.Provider value={{points1, setPoints1, points2, setPoints2, board, setBoard, showPopup, setShowPopup, 
-        winnerName, setWinnerName}}>
+        winnerName, setWinnerName, showTie, setShowTie}}>
             {children}
         </PointsContext.Provider>
     )

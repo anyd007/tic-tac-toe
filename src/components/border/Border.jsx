@@ -7,7 +7,7 @@ import "./boder.css"
 const Border = () =>{
     const {points1, setPoints1} = usePoints()
     const {points2, setPoints2} = usePoints()
-    const {showPopup, setShowPopup} = usePoints()
+    const {showPopup, setShowPopup, showTie, setShowTie} = usePoints()
     const {winnerName, setWinnerName} = usePoints()
     const player1 = localStorage.getItem("player1", "player1")
     const player2 = localStorage.getItem("player2", "player2")
@@ -36,13 +36,13 @@ const Border = () =>{
           });
     },[board])
    
-    useEffect(()=>{
-        if(result.stale !=="null"){
-        alert(`wyniki: ${result.winner}`)
-        }
-    },[result])
+    // useEffect(()=>{
+    //     if(result.stale !=="null"){
+    //     alert(`wyniki: ${result.winner}`)
+    //     }
+    // },[result])
 
-    const chooseSquare = (square,event) =>{
+    const chooseSquare = (square) =>{
        setBoard(board.map((val, index)=>{
         if(index === square && val!==""){
         setPlayer((prev)=>{
@@ -73,11 +73,13 @@ const Border = () =>{
         if(player === "O"){
                 setShowPopup(true)
                 setWinnerName(player2)
+                setPlayer("X")
                 data2++
                 }
             else if(player==="X"){
                 setShowPopup(true)
                 setWinnerName(player1)
+                setPlayer("O")
                 data1++
             }
             localStorage.setItem("data1", JSON.stringify(data1)) 
@@ -99,7 +101,11 @@ const Border = () =>{
             }
         })
         if(tie){
-            setResult({winner:"remis", stale:"non"})
+            setShowTie(true)
+            setPlayer((prev)=>{
+                if(prev==="X") return "O"; 
+                else
+                {return "X"}})
             restart()
         }
        }

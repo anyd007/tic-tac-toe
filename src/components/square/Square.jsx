@@ -5,7 +5,7 @@ import "./square.css"
 const Square = ({val, chooseSquare}) => {
    
     return(
-        <button className="square" onClick={chooseSquare}><span className="square__val">{val}</span></button>
+        <div className="square" onClick={chooseSquare}><span className="square__val">{val}</span></div>
     )
 }
 export default Square

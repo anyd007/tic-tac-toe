@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Border from "../border/Border";
-import { WinnerPopup } from "../popup/Popup";
+import { WinnerPopup, TieGame } from "../popup/Popup";
 import { usePoints } from "../context/pointsContext";
 import { useNavigate } from "react-router-dom";
 import "./game.css"
@@ -10,7 +10,7 @@ const Game = () =>{
     const {points1, setPoints1 } = usePoints()
     const {points2, setPoints2} = usePoints()
     const {board, setBoard} = usePoints()
-    const {showPopup, setShowPopup} = usePoints()
+    const {showPopup, setShowPopup, showTie, setShowTie} = usePoints()
     const player1 = localStorage.getItem("player1", "player1")
     const player2 = localStorage.getItem("player2", "player2")
 
@@ -32,6 +32,7 @@ const Game = () =>{
     
     return(
  <div className="hero">
+    {showTie && <TieGame />}
    {showPopup && <WinnerPopup /> }
     <h2 className="gameTitle">PORA ROZPOCZĄĆ GRĘ</h2>
     <div className="game">

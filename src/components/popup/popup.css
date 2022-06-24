@@ -43,6 +43,9 @@
   color: gold;
   font-size: 3rem;
 }
+.popup__window--loserName {
+  font-size: 1.8rem;
+}
 .popup__window--icon {
   font-size: 2rem;
   color: red;
