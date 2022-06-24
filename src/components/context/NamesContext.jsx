@@ -10,7 +10,7 @@ export const NameContextProvider = ({ children }) => {
     const [player1, setPlayer1] = useState([])
     const [player2, setPlayer2] = useState([])
     const [selectPlayer, setSelectPlayer] = useState([])
-    let select = ["X", "O"]
+    let select = ["X", "O"] 
     const [player, setPlayer] = useState(select[Math.floor(Math.random()*select.length)])
     const [showName, setShowName] = useState(false)
     

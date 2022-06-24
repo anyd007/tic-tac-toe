@@ -26,8 +26,8 @@ const Border = () =>{
     ]
   
     useEffect(()=>{
-        tieGame()
         checkWinner()
+        tieGame()
         setPlayer((previousPlayer) => {
             if (previousPlayer === "X") return "O";
             else {
@@ -36,12 +36,6 @@ const Border = () =>{
           });
     },[board])
    
-    // useEffect(()=>{
-    //     if(result.stale !=="null"){
-    //     alert(`wyniki: ${result.winner}`)
-    //     }
-    // },[result])
-
     const chooseSquare = (square) =>{
        setBoard(board.map((val, index)=>{
         if(index === square && val!==""){
@@ -95,6 +89,10 @@ const Border = () =>{
     
     const tieGame =  () =>{
         let tie = true;
+        if(showPopup===true){
+            tie=false
+            setShowTie(false)
+        }
         board.forEach(square=>{
             if(square ===""){
                 tie=false
