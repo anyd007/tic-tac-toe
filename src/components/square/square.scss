@@ -10,11 +10,13 @@
     0 0 0.8rem #bc13fe,
     0 0 2.8rem #bc13fe,
     inset 0 0 1.3rem #bc13fe;
+    background-color: transparent;
     font-size: 7rem;
     place-items: center;
     justify-content: center;
 
     &__val{
+        width: 100%;
         font-family: 'Rubik Moonrocks', cursive;
         color: gold;
         text-shadow:

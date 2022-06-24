@@ -13,8 +13,6 @@ const Border = () =>{
     const player2 = localStorage.getItem("player2", "player2")
     const {board, setBoard} = usePoints()
     const {player, setPlayer} = useNames()
-    const {selectPlayer, setSelectPlayer} = useNames()
-    const {showName, setShowName} = useNames()
     const [result, setResult] = useState({winner:"none", stale:"null"})
     const pattern = [
     [0,1,2],
@@ -26,33 +24,37 @@ const Border = () =>{
     [0,4,8],
     [2,4,6]
     ]
-
   
     useEffect(()=>{
         tieGame()
         checkWinner()
-        if(player === "X"){
-            setPlayer("O")
-        }
-        else{
-            setPlayer("X")
-        }
+        setPlayer((previousPlayer) => {
+            if (previousPlayer === "X") return "O";
+            else {
+              return "X";
+            }
+          });
     },[board])
-
+   
     useEffect(()=>{
         if(result.stale !=="null"){
         alert(`wyniki: ${result.winner}`)
         }
     },[result])
 
-    const chooseSquare = (square,e) =>{
+    const chooseSquare = (square,event) =>{
        setBoard(board.map((val, index)=>{
+        if(index === square && val!==""){
+        setPlayer((prev)=>{
+            if(prev==="X") return "O"; 
+            else
+            {return "X"}})
+     }
             if(index === square && val === ""){
             return player;
             }
            return val;
-          
-        }))
+          }))
     }
     
     const checkWinner = ()=>{
@@ -107,19 +109,19 @@ const Border = () =>{
     return(
         <div className="board">
             <div className="board__row">
-                <Square val={board[0]} chooseSquare={(e)=>chooseSquare(0,e.target)} className="board__row--square" />
-                <Square val={board[1]} chooseSquare={(e)=>chooseSquare(1,e.target)} className="board__row--square" />
-                <Square val={board[2]} chooseSquare={(e)=>chooseSquare(2,e.target)} className="board__row--square" />
+                <Square val={board[0]} chooseSquare={()=>chooseSquare(0)} className="board__row--square" />
+                <Square val={board[1]} chooseSquare={()=>chooseSquare(1)} className="board__row--square" />
+                <Square val={board[2]} chooseSquare={()=>chooseSquare(2)} className="board__row--square" />
             </div>
             <div className="board__row">
-                <Square val={board[3]} chooseSquare={(e)=>chooseSquare(3,e.target)}className="board__row--square" />
-                <Square val={board[4]} chooseSquare={(e)=>chooseSquare(4,e.target)}className="board__row--square" />
-                <Square val={board[5]} chooseSquare={(e)=>chooseSquare(5,e.target)} className="board__row--square" />
+                <Square val={board[3]} chooseSquare={()=>chooseSquare(3)}className="board__row--square" />
+                <Square val={board[4]} chooseSquare={()=>chooseSquare(4)}className="board__row--square" />
+                <Square val={board[5]} chooseSquare={()=>chooseSquare(5)} className="board__row--square" />
             </div>
             <div className="board__row">
-                <Square val={board[6]} chooseSquare={(e)=>chooseSquare(6,e.target)} className="board__row--square" />
-                <Square val={board[7]} chooseSquare={(e)=>chooseSquare(7,e.target)} className="board__row--square" />
-                <Square val={board[8]} chooseSquare={(e)=>chooseSquare(8,e.target)} className="board__row--square" />
+                <Square val={board[6]} chooseSquare={()=>chooseSquare(6)} className="board__row--square" />
+                <Square val={board[7]} chooseSquare={()=>chooseSquare(7)} className="board__row--square" />
+                <Square val={board[8]} chooseSquare={()=>chooseSquare(8)} className="board__row--square" />
             </div>
         </div>
     )
