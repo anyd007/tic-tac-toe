@@ -1,4 +1,10 @@
+@import "../responsive/mediaQueries";
+
 .square{
+        @include screen(extra-small, small){
+            font-size: 4rem;
+            justify-content: center;
+        }
     display: flex;
     height: 100%;
     cursor: pointer;

@@ -34,17 +34,39 @@
   z-index: 3;
   transition: 0.5 ease-in;
 }
+@media (min-width: 230px) and (max-width: 480px) {
+  .popup__window {
+    width: 90vw;
+    top: 40%;
+  }
+}
 .popup__window--title {
   margin: 25px;
   color: gold;
   font-size: 4rem;
 }
+@media (min-width: 230px) and (max-width: 480px) {
+  .popup__window--title {
+    font-size: 10vw;
+  }
+}
 .popup__window--info {
   color: gold;
   font-size: 3rem;
 }
+@media (min-width: 230px) and (max-width: 480px) {
+  .popup__window--info {
+    font-size: 8vw;
+  }
+}
 .popup__window--loserName {
   font-size: 1.8rem;
+}
+@media (min-width: 230px) and (max-width: 480px) {
+  .popup__window--loserName {
+    font-size: 7vw;
+    margin: 20px;
+  }
 }
 .popup__window--icon {
   font-size: 2rem;

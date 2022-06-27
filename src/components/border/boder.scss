@@ -1,5 +1,11 @@
+@import "../responsive/mediaQueries";
+
 
 .board{
+        @include screen(extra-small, small){
+            height: 50vh;
+            box-shadow: none;
+        }
     display: flex;
     flex-direction: column;
     border-radius: 10px;

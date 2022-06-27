@@ -1,3 +1,5 @@
+@import "../responsive/mediaQueries";
+
 %playersStyle{
     font-size: 2.5rem;
     display: grid;
@@ -36,23 +38,57 @@
 .gameTitle{
     font-size: 3.5rem;
     color: gold;
+            @include screen(extra-small, small){
+                font-size: 2rem;
+                padding: 10px;
+            }
 }
 .game{
     display: grid;
     grid-template-columns: 20vw 1fr 20vw;
     align-items: center;
+            @include screen(extra-small, small){
+                display: grid;
+                grid-template-columns: auto 0 auto;
+                grid-template-rows: 15vh 62vh auto
+            }
 
     &__player1, &__player2{
         @extend %playersStyle;
 
+            @include screen(extra-small, small){
+                font-size: 7vw;
+            }
+
         &--score{
-            font-size: 2rem
+            font-size: 2rem;
+
+            @include screen(extra-small, small){
+                font-size: 5vw;
+            }
         }
 
         &--points{
             font-family: 'Rubik Moonrocks', cursive;
             color: red;
             font-size: 6rem;
+
+            @include screen(extra-small, small){
+                font-size: 12vw;
+                text-shadow: none;
+            }
+        }
+    }
+    &__player2{
+        @include screen(extra-small, small){
+            grid-area: 1 / 3;
+        }
+    }
+
+    &__board{
+        @include screen(extra-small, small){
+            grid-column: 1 / 4;
+        
         }
     }
 
@@ -64,4 +100,5 @@
         grid-column: 3 / 4;
         @extend %buttonStyle
     }
-}
+    
+    }

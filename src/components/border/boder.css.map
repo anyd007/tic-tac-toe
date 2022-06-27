@@ -1,1 +1,1 @@
-{"version":3,"sources":["boder.scss","boder.css"],"names":[],"mappings":"AACA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,YAAA;EACA,gIAAA;ACAJ;ADOY;EACI,aAAA;EACA,mBAAA;EACA,SAAA;ACLhB","file":"boder.css"}
+{"version":3,"sources":["boder.scss","boder.css","../responsive/_mediaQueries.scss"],"names":[],"mappings":"AAGA;EAKI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,YAAA;EACA,gIAAA;ACNJ;ACOI;EFVJ;IAEY,YAAA;IACA,gBAAA;ECKV;AACF;ADOY;EACI,aAAA;EACA,mBAAA;EACA,SAAA;ACLhB","file":"boder.css"}
